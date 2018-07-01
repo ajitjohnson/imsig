@@ -4,10 +4,15 @@ Title: Immune Cell Gene Signatures for Profiling the Microenvironment of Solid T
 Version: 0.1.0
 Author: Ajit Johnson Nirmal
 Maintainer: Ajit Johnson Nirmal <ajitjohnson.n@gmail.com>
-Description: Estimating relative abundance of tissue-infiltrating immune subpopulations abundances using gene expression data.
+Description: Estimate the relative abundance of tissue-infiltrating immune subpopulations abundances using gene expression data.
 License: MIT
 Encoding: UTF-8
 LazyData: true
 Imports:
-  HiClimR (>= 1.2.3)
+  HiClimR (>= 1.2),
+  RColorBrewer (>= 1.1),
+  igraph (>= 1.2),
+  ggplot2 (>= 2.2),
+  gridExtra (>= 2.3),
+  survival (>= 2.4)
 RoxygenNote: 6.0.1
