@@ -8,9 +8,9 @@
 #' @seealso \code{\link{feature_select}}, \code{\link{example_data}}
 #' @export
 
-plot_abundance = function(exp, r = 0.6){
-  cell = imsig(exp, r)
-  cell$samples = row.names(cell)
+plot_abundance <- function(exp, r = 0.6){
+  cell <- imsig(exp, r)
+  cell$samples <- row.names(cell)
   cell$samples <- factor(cell$samples, levels = cell$samples)
   plots = lapply(1:(ncol(cell)-1), function(x) ggplot(cell, aes(x = cell$samples, y = cell[,x]))
                  + geom_bar(stat = "identity") + theme_classic() +

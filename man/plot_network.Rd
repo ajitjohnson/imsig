@@ -4,8 +4,9 @@
 \alias{plot_network}
 \title{Network graph of ImSig genes}
 \usage{
-plot_network(exp, r, pt.cex = 2, cex = 1, inset = 0, x.intersp = 2,
-  vertex.size = 3, vertex.label = NA, layout = layout_with_fr)
+plot_network(exp, r = 0.6, pt.cex = 2, cex = 1, inset = 0,
+  x.intersp = 2, vertex.size = 3, vertex.label = NA,
+  layout = layout_with_fr)
 }
 \arguments{
 \item{exp}{Dataframe of transcriptomic data (natural scale) containing genes as rows and samples as columns. Note: Gene names should be set as row names and duplicates are not allowed. Missing values are not allowed within the expression matrix. Check example- head(example_data): \code{\link{example_data}}.}

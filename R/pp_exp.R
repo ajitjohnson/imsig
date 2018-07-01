@@ -4,7 +4,8 @@
 #' @return Expression dataframe
 
 pp_exp <- function(exp){
-  g = Reduce(intersect, list(as.character(row.names(exp), sig$gene)))
-  exp = exp [as.character(g),]
+  sig <- sig
+  g <- Reduce(intersect, list(as.character(row.names(exp), sig$gene)))
+  exp <- exp [as.character(g),]
   return(exp)
 }

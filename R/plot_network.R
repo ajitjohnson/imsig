@@ -12,23 +12,26 @@
 #' @return Network graph
 #' @seealso \code{\link{feature_select}}
 #' @import RColorBrewer
-#' @import igraph
+#' @importFrom igraph graph_from_adjacency_matrix
+#' @importFrom igraph layout_with_fr
+#' @import graphics
 #' @export
 
-plot_network = function(exp, r, pt.cex = 2, cex = 1, inset = 0, x.intersp=2, vertex.size = 3, vertex.label= NA, layout = layout_with_fr){
+plot_network <- function(exp, r=0.6, pt.cex = 2, cex = 1, inset = 0, x.intersp=2, vertex.size = 3, vertex.label= NA, layout = layout_with_fr){
   exp <- pp_exp(exp)
   sig <- pp_sig(exp)
-  fg = feature_select(exp, r)
-  cor_data = corr_matrix(exp, r)
-  cor_data = cor_data[fg,fg]
-  network=graph_from_adjacency_matrix(cor_data, weighted=T, mode="undirected", diag=F)
+  fg <- feature_select(exp, r)
+  cor_data <- corr_matrix(exp, r)
+  cor_data <- cor_data[fg,fg]
+  network <- graph_from_adjacency_matrix(cor_data, weighted=T, mode="undirected", diag=F)
   # Colour the nodes
-  sig_sub = subset(sig, gene %in% fg)
-  sig_sub = sig_sub[match(fg, sig_sub$gene),]
-  coul = brewer.pal(nlevels(as.factor(sig_sub$cell)), "Set3")
+  gene <- sig$gene
+  sig_sub <- subset(sig, gene %in% fg)
+  sig_sub <- sig_sub[match(fg, sig_sub$gene),]
+  coul <- brewer.pal(nlevels(as.factor(sig_sub$cell)), "Set3")
   # Map the color to cell types
-  my_color=coul[sig_sub$cell]
-  layout(matrix(c(1, 2), nrow=1, byrow=TRUE), widths=c(2,1))
+  my_color <- coul[sig_sub$cell]
+  par(mfrow=c(1,2))
   plot(network,
        vertex.size = vertex.size,
        vertex.label= vertex.label,

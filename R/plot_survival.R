@@ -11,7 +11,7 @@
 #' @export
 
 plot_survival <- function(exp, cli, time = 'time', status= 'status', r = 0.6){
-  surv_data = imsig_survival (exp, cli, time, status, r)
+  surv_data <- imsig_survival (exp, cli, time, status, r)
   surv_data$p <- ifelse(surv_data$`P value` <= 0.05, "P < 0.05", "non-significant")
   ggplot(data=surv_data, aes(x=row.names(surv_data), y=surv_data$`Log2-Hazard ratio of low expression`, ymin=surv_data$`95% CI lower limit`, ymax=surv_data$`95% CI upper limit`, colour = as.factor(surv_data$p))) +
     geom_pointrange() +

@@ -6,20 +6,20 @@
 #' @seealso \code{\link{feature_select}}, \code{\link{example_data}}
 #' @export
 
-imsig = function(exp, r = 0.6){
+imsig <- function(exp, r = 0.6){
   exp <- pp_exp(exp)
   sig <- pp_sig(exp)
-  fg = feature_select(exp, r)
-  sig_fg = sig[ which(as.character(sig$gene) %in% fg), ]
-  avg_data = exp[row.names(exp) %in% fg,]
-  cc = data.frame(matrix(nrow = ncol(exp)))
-  cc = cc[,-1]
+  fg <- feature_select(exp, r)
+  sig_fg <- sig[ which(as.character(sig$gene) %in% fg), ]
+  avg_data <- exp[row.names(exp) %in% fg,]
+  cc <- data.frame(matrix(nrow = ncol(exp)))
+  cc <- cc[,-1]
   for (i in levels(sig_fg$cell)){
-    s = sig_fg[sig_fg$cell %in% i,]
-    e = avg_data[as.character(s$gene),]
-    e_avg = data.frame(colMeans(e, na.rm = TRUE))
-    colnames(e_avg) = i
-    cc = cbind(cc, e_avg)
+    s <- sig_fg[sig_fg$cell %in% i,]
+    e <- avg_data[as.character(s$gene),]
+    e_avg <- data.frame(colMeans(e, na.rm = TRUE))
+    colnames(e_avg) <- i
+    cc <- cbind(cc, e_avg)
   }
   cc <- cc[order(data.frame(cc$'T cells')),]
   return(cc)

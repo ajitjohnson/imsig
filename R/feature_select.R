@@ -17,6 +17,6 @@ feature_select <- function(exp, r = 0.6){
     fg_subb <- row.names(cor_data[fg_subb,fg_subb])
     fg_all <- c(fg_all, fg_subb)
   }
-  fg = do.call(c, fg_all)
+  fg <- do.call(c, fg_all)
   return(fg)
 }
