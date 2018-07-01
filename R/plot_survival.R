@@ -7,6 +7,9 @@
 #' @param r Use a value between 0 and 1. Default is 0.6. This is a user defined correlation cut-off to perform feature selection (\code{\link{feature_select}}). Feature selection aids to enrich the prediction of relative abundance of immune cells by filtering off poorly correlated ImSig genes. To get an idea of what cut-off to use check the results of (\code{\link{gene_stat}} and choose a cut-off that displays high median correlation and maintains a high proportion of genes after feature selection.
 #' @return Forest plot
 #' @import ggplot2
+#' @examples \dontrun{
+#' plot_survival (exp = example_data, r = 0.7, cli = example_cli, time = 'time', status= 'status')
+#' }
 #' @seealso \code{\link{feature_select}}, \code{\link{example_data}}, \code{\link{example_cli}}
 #' @export
 

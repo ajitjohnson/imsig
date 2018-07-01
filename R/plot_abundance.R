@@ -5,6 +5,9 @@
 #' @return ggplot
 #' @import ggplot2
 #' @import gridExtra
+#' @examples \dontrun{
+#' plot_abundance (exp = example_data, r = 0.7)
+#' }
 #' @seealso \code{\link{feature_select}}, \code{\link{example_data}}
 #' @export
 

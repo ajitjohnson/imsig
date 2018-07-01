@@ -17,3 +17,8 @@ Returns a list of 'feature selected' genes based on the set r value.
 \description{
 mSig genes were designed to be co-expressed in tissue transcriptomic data. However, depending on the dataset some of the genes may not co-express with the dominant module. In order to remove such deviant genes, a feature selection can be carried out based on correlation. This function removes genes that exhibit a poor correlation (less than the defined r value) with the dominant ImSig module. This step of feature selection is recommended to enrich the prediction of relative abundance of immune cells.
 }
+\examples{
+\dontrun{
+feature_select (exp = example_data, r = 0.7)
+}
+}

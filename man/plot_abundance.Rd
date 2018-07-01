@@ -17,6 +17,11 @@ ggplot
 \description{
 Barplots of relative abundance of immune cells across samples.The order of the samples are the same as that of \code{\link{imsig}}.
 }
+\examples{
+\dontrun{
+plot_abundance (exp = example_data, r = 0.7)
+}
+}
 \seealso{
 \code{\link{feature_select}}, \code{\link{example_data}}
 }

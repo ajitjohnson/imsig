@@ -23,6 +23,11 @@ Forest plot
 \description{
 Patients are split into two groups based on their immune cell abundance (median aundance value) and a regular survival analyis is carried out. Raw values can be obtained from \code{\link{imsig_survival}}.
 }
+\examples{
+\dontrun{
+plot_survival (exp = example_data, r = 0.7, cli = example_cli, time = 'time', status= 'status')
+}
+}
 \seealso{
 \code{\link{feature_select}}, \code{\link{example_data}}, \code{\link{example_cli}}
 }

@@ -23,6 +23,12 @@ Hazard Ratio
 \description{
 Patients are split into two groups based on their immune cell abundance (median aundance value) and a regular survival analyis is carried out.
 }
+\examples{
+\dontrun{
+survival = imsig_survival (exp = example_data)
+head(survival)
+}
+}
 \seealso{
 \code{\link{feature_select}}, \code{\link{example_data}}, \code{\link{example_cli}}
 }
