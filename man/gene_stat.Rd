@@ -18,9 +18,7 @@ Dataframe of general statistics of ImSig analysis.
 [Total genes in ImSig]: The total number of genes in ImSig list. [No. of ImSig genes in user dataset]: The number of ImSig genes found in user's dataset. Like all signatures, ImSig works best when this overlap is high, preferably over 75%. [Median correlation of ImSig genes]: This is the number of remaining ImSig genes after \code{\link{feature_select}}. If this number drops drastically or if the median correlation is low, it may indicate the absence of the particular cell type in users dataset. [Median correlation of feature selected ImSig genes]: These values again can be used gauge the presence or absence of a cell type. As ImSig genes were designed to be co-expressed when the cell type is present, poor correlations may indicate absence of the cell type in the dataset. A network graph (\code{\link{plot_network }}) may be generated to visually confirm the observation.
 }
 \examples{
-\dontrun{
 gene_stat (exp = example_data, r = 0.7)
-}
 }
 \seealso{
 \code{\link{feature_select}}

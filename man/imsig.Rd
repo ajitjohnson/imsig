@@ -18,10 +18,8 @@ Relative abundance of immune cells across samples. Returns a dataframe.
 Estimates the relative abundance of immune cells across patients/samples.
 }
 \examples{
-\dontrun{
 cell_abundance = imsig (exp = example_data, r = 0.7)
 head(cell_abundance)
-}
 }
 \seealso{
 \code{\link{feature_select}}, \code{\link{example_data}}

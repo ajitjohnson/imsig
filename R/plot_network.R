@@ -15,9 +15,8 @@
 #' @importFrom igraph graph_from_adjacency_matrix
 #' @importFrom igraph layout_with_fr
 #' @import graphics
-#' @examples \dontrun{
+#' @examples
 #' plot_network (exp = example_data, r = 0.7)
-#' }
 #' @export
 
 plot_network <- function(exp, r=0.6, pt.cex = 2, cex = 1, inset = 0, x.intersp=2, vertex.size = 3, vertex.label= NA, layout = layout_with_fr){

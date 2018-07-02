@@ -34,9 +34,7 @@ Network graph
 A Network visualization displays undirected graph structures and highlights the relationships between entities. The nodes are ImSig genes and the edges represent the correlation between them. The nodes are coloured based on cell type. Try using a correlation cut-off of '0' to get a complete picture.
 }
 \examples{
-\dontrun{
 plot_network (exp = example_data, r = 0.7)
-}
 }
 \seealso{
 \code{\link{feature_select}}
