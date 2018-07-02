@@ -4,7 +4,7 @@ Title: Immune Cell Gene Signatures for Profiling the Microenvironment of Solid T
 Version: 0.1.0
 Author: Ajit Johnson Nirmal
 Maintainer: Ajit Johnson Nirmal <ajitjohnson.n@gmail.com>
-Description: Estimate the relative abundance of tissue-infiltrating immune subpopulations abundances using gene expression data. This package uses 'survival' package for survival analysis- Terry M Therneau (2015, ISBN:0-387-98784-3) 
+Description: Estimate the relative abundance of tissue-infiltrating immune subpopulations abundances using gene expression data. The 'survival' package was developed by- Terry M Therneau (2015, ISBN:0-387-98784-3) 
 License: GPL-3
 BugReports: https://github.com/ajitjohnson/imsig/issues
 Encoding: UTF-8
