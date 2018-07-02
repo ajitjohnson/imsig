@@ -2,7 +2,7 @@
 
 *ImSig* is a set of gene signatures that can be used to estimate the relative abundance of immune cells in tissue transcriptomics data especially in cancer datasets.
 
-The basic **principle** behind *ImSig* analysis is that for a given immune cell type to be called as present in a dataset, it is not sufficient for the signature genes to be expressed but they need to be co-expressed as well. *ImSig* genes were designed to be co-expressed in tissues and so failure to co-express in the users dataset may indicate the absence of the cell type. Once the user has determined the cell types present in their dataset, they can compute the relative abundance of immune cells and can also carry out survival analysis using this package.
+The basic **principle** behind *ImSig* analysis is that for a given immune cell type to be called as present in a dataset, it is not only sufficient for the signature genes to be expressed but also need to be co-expressed. *ImSig* genes were designed to be co-expressed in tissue transcriptomic data and so failure to co-express in the users dataset may indicate its absence. Once the user has identified the cell types present in their dataset, they can compute its relative abundance and also carry out survival analysis using this package.
 
 # Requirements
 ### Mandatory
