@@ -1,24 +1,67 @@
-# imsig: Immune Cell Gene Signatures for Profiling the Microenvironment of Solid Tumours
+# *imsig*: Immune Cell Gene Signatures for Profiling the Microenvironment of Solid Tumours
 
-ImSig is a set of gene signatures that can be used to estimate the relative abundance of immune cells in tissue transcriptomics data especially in cancer datasets.
+*ImSig* is a set of gene signatures that can be used to estimate the relative abundance of immune cells in tissue transcriptomics data especially in cancer datasets.
+
+The basic **principle** behind *ImSig* analysis is that for a given immune cell type to be called as present in a dataset, it is not sufficient for the signature genes to be expressed but they need to be co-expressed as well. *ImSig* genes were designed to be co-expressed in tissues and so failure to co-express in the users dataset may indicate the absence of the cell type. Once the user has determined the cell types present in their dataset, they can compute the relative abundance of immune cells and can also carry out survival analysis using this package.
 
 # Requirements
 ### Mandatory
-**Expression matrix** of transcriptomics data, with HGNC gene symbols as rows and samples as columns. The Gene symbols need to be set as rownames and duplicates are not allowed. Missing values are also not allowed within the expression matrix. The expression matrix can be imported into R using something similar to the basic syntax below.
+**Expression matrix** of transcriptomics data, with HGNC gene symbols as rows and samples as columns. The Gene symbols need to be set as rownames and duplicates are not allowed. Missing values are also not allowed within the expression matrix. The expression matrix can be imported into R using something similar to the basic syntax below. 
 
 `exp = read.table('exp.txt', header = T, row.names = 1, sep = '\t')`
 
+After installing and loading *ImSig*, type `head(example_data)` in the R console to view an example expression file.
+
 ### Optional
-**Survival data** (event and time to event) for the set of patients is required if the effect of immune infiltration in patient prognosis is to be determined. 
+**Survival data** (event and time to event) for the set of patients is required if the effect of immune infiltration in patient prognosis is to be determined. The survival metadata can be imported into R using something similar to the basic syntax below. The sample names in the expression matrix and in the survial metadata need to be the same.
+
+`cli = read.table('cli.txt', header = T, row.names = 1, sep = '\t')`
+
+After installing and loading *ImSig*, type `head(example_cli)` in the R console to view an example survival file.
 
 # Usage
 
 #### Install package
 
-`install.packages("imsig")`
+`install.packages("imsig")`   
+`library("imsig")`
 
 #### Get an idea of the imported data
 
 `gene_stat (exp = exp, r = 0.7)`
 
-This function returns a table of basic stats of the data. 
+This function returns a table of basic stats of the data. I would first take a look at the number of genes that overlap between *ImSig* and  the imported data. Like all deconvolution methods, *ImSig* works best when all genes are available. I would recommend an overlap of atleast 75%. Secondly, I would look at the number of feature selected genes. Feature selection essentially removes genes that are not well correlated based on the user defined threshold (*r*). A simple interpretation of this feild would be that, when a large number of signature genes are lost due to feature selection, it may indicate the absence of the cell type. This is because, in contrary to other signatures and deconvolution methods *ImSig* was designed to be co-expressed in tissues and so when they do not co-express and consequently gets filtered off, it may indicate the absense of that cell type. Finally, I would look at the median correlatiion values. Again poor median correlation values can indicate the absense of the cell type. For example, if you run a blood dataset, you will find that the macrophage signature genes will show a very low median correlation value since macrophages are not present in blood.
+
+This function can also be run with different corrlation thresholds (*r*) to determine what to use for subsequent analysis. I would choose a value where a large number of genes are retained after feature selection, with a reasonably high median correlation value across cell types. 
+
+#### Run *ImSig* algorithm
+
+`imsig (exp = exp, r = 0.7)`
+
+This function returns a table of relative abundance of immune cells across samples. They are ordered by the relative abundance of T cells. If you would like to plot the results you can use the inbuild function,
+
+`plot_abundance (exp = exp, r = 0.7)`
+
+Note, that the patients are ordered in the same way as in the table generated above. 
+
+It is also possible to generate a network graph of the *ImSig* genes. This can complement the `gene_stat` function, to determine which cell types are likely present in the users dataset. The network graph can be generated by running the following command.
+
+
+`plot_network (exp = exp, r = 0.7)`
+
+The network can be fine tuned by adding additional arguments. check `?plot_network` for available arguments.
+
+#### Survival analysis
+
+If survival information is available, cox proportional hazard ratio can be calculated. The function first calculates the reltive abundance of immune cells and then divides the patients into two groups ('high' and 'low') based on the median abundance value. Survial analysis is then carried out between these two groups. 
+
+`imsig_survival (exp = exp, cli = cli, r = 0.7, time = 'time', status= 'status')`
+
+Here, `cli` is the survival dataframe, `time` is the columnname of the time to event data within `cli` and `status` is the columnname of the event data within `cli`.
+
+Similarly, the hazard ratio's can also be plotted using the following function.
+
+`plot_survival (exp = exp, cli = cli, r = 0.7, time = 'time', status= 'status')`
+
+# Issues
+If there are any issues please report it at https://github.com/ajitjohnson/imsig/issues
