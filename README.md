@@ -38,7 +38,7 @@ This function can be run with different correlation thresholds (*r*) to determin
 
 `imsig (exp = exp, r = 0.7)`
 
-This function returns a table of the relative abundance of immune cells across samples. They are ordered by the relative abundance of T cells. If you would like to plot the results you could export the results or use the inbuilt function,
+This function returns a table of the relative abundance of immune cells across samples and ordered based on the relative abundance of T cells. If you would like to plot the results you could export the results or use the inbuilt function,
 
 `plot_abundance (exp = exp, r = 0.7)`
 
