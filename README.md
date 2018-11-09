@@ -4,6 +4,11 @@
 
 The basic **principle** behind *ImSig* analysis is that for a given immune cell type to be called as present in a dataset, it is not sufficient for the signature genes to be expressed but also need to be co-expressed. *ImSig* genes were designed to be co-expressed in tissue transcriptomic data and so failure to co-express in the user's dataset may indicate its absence. Once the user has identified the cell types present in their dataset, they can compute its relative abundance and carry out survival analysis with this package.
 
+### Citation
+Immune Cell Gene Signatures for Profiling the Microenvironment of Solid Tumors <br>
+Ajit J. Nirmal, Tim Regan, Barbara B. Shih, David A. Hume, Andrew H. Sims and Tom C. Freeman <br>
+Cancer Immunol Res November 1 2018 (6) (11) 1388-1400; DOI: 10.1158/2326-6066.CIR-18-0342 <br>
+
 # Requirements
 ### Mandatory
 **Expression matrix** of transcriptomics data, with HGNC gene symbols in rows and samples in columns. The Gene symbols need to be set as *rownames* and duplicates are not allowed. Missing values are also not allowed within the expression matrix. After installing and loading *ImSig*, type `head(example_data)` in the R console to view an example expression file.
