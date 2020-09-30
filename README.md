@@ -31,6 +31,17 @@ The survival metadata can be imported into R using something similar to the basi
 **`install.packages("imsig")`**    
 **`library("imsig")`**
 
+#### To use the latest developmental version
+
+```
+if( !require(devtools) ) install.packages("devtools")
+devtools::install_github( "ajitjohnson/imsig", INSTALL_opts = "--no-multiarch")
+
+# Load the package
+library("imsig")
+
+```
+
 #### Get an idea of the imported data
 
 **`gene_stat (exp = exp, r = 0.7)`**

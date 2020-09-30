@@ -1,7 +1,7 @@
 Package: imsig
 Type: Package
 Title: Immune Cell Gene Signatures for Profiling the Microenvironment of Solid Tumours
-Version: 1.0.0
+Version: 1.0.1
 Author: Ajit Johnson Nirmal
 Maintainer: Ajit Johnson Nirmal <ajitjohnson.n@gmail.com>
 Description: Estimate the relative abundance of tissue-infiltrating immune subpopulations abundances using gene expression data. 
