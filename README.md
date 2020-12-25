@@ -7,7 +7,7 @@ The basic **principle** behind *ImSig* analysis is that for a given immune cell 
 ### Citation
 Immune Cell Gene Signatures for Profiling the Microenvironment of Solid Tumors <br>
 Ajit J. Nirmal, Tim Regan, Barbara B. Shih, David A. Hume, Andrew H. Sims and Tom C. Freeman <br>
-Cancer Immunol Res November 1 2018 (6) (11) 1388-1400; DOI: 10.1158/2326-6066.CIR-18-0342 <br>
+[Cancer Immunol Res](https://cancerimmunolres.aacrjournals.org/content/6/11/1388) November 1 2018 (6) (11) 1388-1400; DOI: 10.1158/2326-6066.CIR-18-0342 <br>
 
 # Requirements
 ### Mandatory
@@ -28,8 +28,10 @@ The survival metadata can be imported into R using something similar to the basi
 
 #### Install package
 
-**`install.packages("imsig")`**    
-**`library("imsig")`**
+```
+install.packages("imsig")  
+library("imsig")
+```
 
 #### To use the latest developmental version
 
