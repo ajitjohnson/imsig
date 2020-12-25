@@ -4,7 +4,9 @@
 \name{example_data}
 \alias{example_data}
 \title{Example transcriptomics data}
-\format{dataframe}
+\format{
+dataframe
+}
 \usage{
 example_data
 }

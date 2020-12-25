@@ -4,14 +4,22 @@
 \alias{plot_network}
 \title{Network graph of ImSig genes}
 \usage{
-plot_network(exp, r = 0.6, pt.cex = 2, cex = 1, inset = 0,
-  x.intersp = 2, vertex.size = 3, vertex.label = NA,
-  layout = layout_with_fr)
+plot_network(
+  exp,
+  r = 0.6,
+  pt.cex = 2,
+  cex = 1,
+  inset = 0,
+  x.intersp = 2,
+  vertex.size = 3,
+  vertex.label = NA,
+  layout = layout_with_fr
+)
 }
 \arguments{
 \item{exp}{Dataframe of transcriptomic data (natural scale) containing genes as rows and samples as columns. Note: Gene names should be set as row names and duplicates are not allowed. Missing values are not allowed within the expression matrix. Check example- head(example_data): \code{\link{example_data}}.}
 
-\item{r}{Use a value between 0 and 1. Default is 0.6. This is a user defined correlation cut-off to perform feature selection (\code{\link{feature_select}}). Feature selection aids to enrich the prediction of relative abundance of immune cells by filtering off poorly correlated ImSig genes. To get an idea of what cut-off to use check the results of (\code{\link{gene_stat}} and choose a cut-off that displays high median correlation and maintains a high proportion of genes after feature selection.}
+\item{r}{Use a value between 0 and 1. Default is 0.6. This is a user defined correlation cut-off to perform feature selection (\code{\link{feature_select}}). Feature selection aids to enrich the prediction of relative abundance of immune cells by filtering off poorly correlated ImSig genes. To get an idea of what cut-off to use check the results of (\code{\link{gene_stat}}) and choose a cut-off that displays high median correlation and maintains a high proportion of genes after feature selection.}
 
 \item{pt.cex}{expansion factor(s) for the points.}
 

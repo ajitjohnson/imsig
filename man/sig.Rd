@@ -4,7 +4,9 @@
 \name{sig}
 \alias{sig}
 \title{ImSig genes}
-\format{dataframe}
+\format{
+dataframe
+}
 \usage{
 sig
 }

@@ -4,7 +4,9 @@
 \name{example_cli}
 \alias{example_cli}
 \title{Example clinical data file for survival analysis with ImSig}
-\format{dataframe}
+\format{
+dataframe
+}
 \usage{
 example_cli
 }

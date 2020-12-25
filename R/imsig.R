@@ -6,7 +6,7 @@
 #' @param sort_by Can be used to sort the samples by predicted abundance of a particular cell type. All other cell types follow this sorting. By default it is sorted by `T cells`
 #' @return Relative abundance of immune cells across samples. Returns a dataframe.
 #' @examples
-#' cell_abundance = imsig (exp = example_data, r = 0.7)
+#' cell_abundance = imsig (exp = example_data, r = 0.7, sort=TRUE, sort_by='T cells')
 #' head(cell_abundance)
 #' @seealso \code{\link{feature_select}}, \code{\link{example_data}}
 #' @export
