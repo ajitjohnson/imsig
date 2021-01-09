@@ -26,7 +26,7 @@ imsig <- function(exp, r = 0.6, sort=TRUE, sort_by='T cells'){
     colnames(e_avg) <- i
     cc <- cbind(cc, e_avg)
   }
-  if (sort == TRUE){cc <- cc[sort.list(data.frame(cc[,sort_by])),]}
+  if (sort == TRUE){cc <- cc[sort.list(unlist(data.frame(cc[,sort_by]))),]}
   return(cc)
 }
 

@@ -23,7 +23,7 @@ imsig_survival <- function(exp, cli, time = 'time', status= 'status', r = 0.6){
   cell_cli <- cell_cli[,-1]
   HR <- data.frame()
   for (i in 1: length(levels(sig$cell))){
-    cell_ordered <- cell_cli[sort.list(cell_cli[,i]),]
+    cell_ordered <- cell_cli[unlist(sort.list(cell_cli[,i])),]
     cell_ordered$group <- ifelse(cell_ordered[,i] <= median(cell_cli[,i]), "low", "high")
     cox <- survival::coxph(Surv(time, status) ~ group, cell_ordered)
     x <- summary(cox)[8]
